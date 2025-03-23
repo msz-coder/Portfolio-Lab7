@@ -1,0 +1,172 @@
+@import "../../_globalColor";
+
+.skills-main-div {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skills-text-div {
+  margin-left: 50px;
+}
+
+.skills-main-div > * {
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+.skills-image-div > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.skills-heading {
+  font-size: 56px;
+  font-weight: 400;
+}
+.subTitle {
+  color: $subTitle;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--search-bar-bg, $darkBackground); // Use CSS variable for dynamic theming
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.5rem; /* Increased font size */
+  padding: 5px;
+  margin-left: 10px;
+  background-color: transparent;
+  color: var(--search-bar-text, $textColorDark); /* Use CSS variable for dynamic theming */
+}
+
+.search-bar input::placeholder {
+  color: var(--search-bar-placeholder, $subTitle); // Use CSS variable for dynamic theming
+}
+
+.search-bar i {
+  color: var(--search-bar-icon, $buttonColor); // Use CSS variable for dynamic theming
+  cursor: pointer;
+}
+
+/* Clear Button */
+.clear-button {
+  background-color: transparent;
+  border: none;
+  color: var(--search-bar-icon, $buttonColor); // Use CSS variable for dynamic theming
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+
+.clear-button:hover {
+  color: var(--search-bar-icon-hover, $buttonHover); // Use CSS variable for dynamic theming
+}
+
+/* Category Dropdown */
+.category-dropdown {
+  position: relative;
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: var(--search-bar-icon, $buttonColor); // Use CSS variable for dynamic theming
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white; // Text color for the dropdown
+}
+
+.category-dropdown span {
+  font-size: 1rem;
+}
+
+.category-dropdown i {
+  font-size: 0.8rem;
+  margin-left: 5px; /* Space between text and chevron */
+  color: white;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--search-bar-bg, $darkBackground); // Use CSS variable for dynamic theming
+  border: 1px solid var(--search-bar-icon, $buttonColor); // Use CSS variable for dynamic theming
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 5px;
+  width: 200px;
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  max-height: 300px; /* Prevent cropping */
+  overflow-y: auto; /* Add scroll if needed */
+}
+
+.dropdown-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: var(--search-bar-text, $textColorDark); /* Use CSS variable for dynamic theming */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-list li:hover {
+  background-color: var(--search-bar-icon, $buttonColor); // Use CSS variable for dynamic theming
+  color: white; // Text color on hover
+}
+
+/* Selected Category Highlight */
+.dropdown-list li.selected {
+  background-color: var(--search-bar-icon, $buttonColor); // Use CSS variable for dynamic theming
+  color: white;
+}
+
+/* Media Query */
+@media (max-width: 1380px) {
+  .skills-heading {
+    font-size: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .skills-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+  .greeting-text-p {
+    font-size: 16px;
+    line-height: normal;
+  }
+  .skills-main-div {
+    flex-direction: column;
+  }
+  .skills-text-div {
+    margin-left: 0px;
+    margin: 20px;
+  }
+  .skills-text {
+    font-size: 16px;
+  }
+  .skills-text-subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+  .skills-image-div {
+    /* display: none; */
+    order: 2;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "function": {
+      "fetchWeather": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

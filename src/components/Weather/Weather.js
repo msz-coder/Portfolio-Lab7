@@ -8,7 +8,7 @@ export default function Weather() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/weather")
+    fetch("/api/fetchWeather")
       .then((res) => res.json())
       .then((data) => {
         if (data.error) {

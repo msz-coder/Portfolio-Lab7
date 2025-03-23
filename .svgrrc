@@ -1,0 +1,6 @@
+{
+  "svgo": false,
+  "replaceAttrValues": {
+    "#000": "{props.fill || 'currentColor'}"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "function": {
+    "fetchProjects": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "fetchWeather"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "fetchWeather": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_fetchProjects_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchProjects"
+        }
+      ]
+    },
+    "AMPLIFY_function_fetchProjects_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchProjects"
+        }
+      ]
+    },
+    "AMPLIFY_function_fetchWeather_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchWeather"
+        }
+      ]
+    },
+    "AMPLIFY_function_fetchWeather_openweatherApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchWeather"
+        }
+      ]
+    },
+    "AMPLIFY_function_fetchWeather_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchWeather"
+        }
+      ]
+    }
+  }
+}

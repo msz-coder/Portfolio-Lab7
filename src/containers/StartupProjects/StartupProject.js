@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./StartupProjects.scss";
+// Removed bigProjects import
 import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -17,13 +18,13 @@ export default function StartupProject() {
   }
 
   useEffect(() => {
-    // Use the correct Amplify endpoint for fetching projects
-    fetch("/api/fetchProjects")
+    fetch("http://localhost:3001/api/projects")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("Error fetching projects:", err));
   }, []);
 
+  // if (!projects.length) return null;
   if (!projects.length) {
     return (
       <div className="main" id="projects">
@@ -70,8 +71,8 @@ export default function StartupProject() {
                     {project.projectName}
                   </h5>
                   <p className="project-author">
-                    <strong>Author:</strong> {project.author}
-                  </p>
+                  <strong>Author:</strong> {project.author}
+                </p>
 
                   <div className={isDark ? "dark-mode card-subtitle" : "card-subtitle"}>
                     {Array.isArray(project.projectDesc) ? (

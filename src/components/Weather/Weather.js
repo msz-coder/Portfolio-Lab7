@@ -8,7 +8,7 @@ export default function Weather() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/weather")
+    fetch("https://portfolio-api-backend-0544f6fc6e71.herokuapp.com/api/weather")
       .then((res) => res.json())
       .then((data) => {
         if (data.error) {

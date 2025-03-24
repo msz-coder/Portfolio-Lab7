@@ -18,7 +18,7 @@ export default function StartupProject() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/projects")
+    fetch("https://portfolio-api-backend-0544f6fc6e71.herokuapp.com/api/projects")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("Error fetching projects:", err));
